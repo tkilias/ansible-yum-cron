@@ -9,6 +9,10 @@
   service: name=crond state=started enabled=yes
   tags: cronie
 
+- name: Ensures yum up to date
+  yum: name=yum state=latest
+  tags: yum-cron
+
 - name: Ensures yum-cron installed
   yum: name=yum-cron state=present
   tags: yum-cron
